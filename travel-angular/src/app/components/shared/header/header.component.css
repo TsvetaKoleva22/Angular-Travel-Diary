@@ -1,0 +1,286 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+    box-sizing: border-box;
+}
+*:before, *:after{
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 16px/1.5 'Lucida Calligraphy', sans-serif;
+    /* background: url("./assets/images/Paris4.jpg") no-repeat center center fixed; */
+    background-size: cover;    
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+img {
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+nav.navbar-menu {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #556B2F;
+}
+
+nav.navbar-menu a {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: white;    
+    width: 15%;
+    align-items: center;
+    padding: 20px 10px;
+    border: 1px solid #556B2F;
+    border-radius: 8px;
+}
+
+nav.navbar-menu a:hover {
+    color: #556B2F;
+    background-color: rgb(188, 212, 151);
+}
+
+#navimage{
+    margin: 0px;
+    padding: 0px;
+}
+#navimage:hover {
+    margin: 0px;
+    padding: 0px;
+    background-color: #556B2F;
+}
+#compass{
+    width: 50px;
+    height: 50px;
+}
+
+.datePar{
+    color: rgb(206, 56, 119);
+    font-size: 12px;
+    margin: 0px;
+}
+.allHeading{
+    text-align: center;
+    margin: 15px;
+    font-size: 40px;
+    color: #556B2F;
+}
+
+.imgDet{
+    width: 500px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.contDet{
+    margin: 0 auto;
+}
+
+.aboutPar{
+    margin: 20px;
+    font-size: 16px;
+}
+#hiPar{
+    text-align: right;
+    margin-right: 20px;
+    color: white;
+}
+
+.mybtn{
+    font: 16px/1.5 'Lucida Calligraphy', sans-serif; 
+    cursor: pointer;
+}
+.mybtn:disabled{
+    font: 16px/1.5 'Lucida Calligraphy', sans-serif;
+    background: rgb(169, 199, 113); 
+    cursor: not-allowed;
+}
+.alert-danger{
+    background: rgb(212, 127, 124);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 8px;
+}
+
+
+.userForm input{
+    text-align: left;
+    width: 300px;
+}
+.userForm label{
+    text-align: left;
+    width: 300px;
+    margin: 10px;
+}
+
+#searchForm{
+    width: 60%;
+}
+#searchForm button{
+    padding: 5px;
+}
+#searchForm select{
+    width: 300px;
+}
+
+#likeButton{
+    background: rgb(243, 121, 227);
+    color: indigo;
+    margin-right: 40px;
+}
+
+.headingDetails{
+    text-align: center
+}
+.headingDetails span{
+    color: deeppink;
+    margin-left: 30px;
+}
+
+div.welcome-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    padding: 3em 0;
+    text-align: center;
+}
+
+div.welcome-wrapper p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.welcome {
+    margin-bottom: 30px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 5px #ada5a5;
+}
+
+div.welcome a {
+    padding: 10px;
+    background-color: #556B2F;
+    border-radius: 0.5em;
+    outline: none;
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    border: 2px solid #556B2F;
+    
+}
+
+div.welcome a:hover {
+    background-color: white;
+    color: #556B2F;
+    border: 2px solid #556B2F;
+}
+
+div.welcome p {
+    font-size: 18px;
+    margin: 25px
+}
+
+.form-wrapper {
+    padding: 1em 0 3em 0;
+    width: 60%;
+    margin: 0 auto;       
+    text-align: center;
+}
+
+.form-wrapper form{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+.form-group label{    
+    padding-right: 1em;
+    text-align: left;
+}
+
+.form-wrapper input{
+   padding: 10px 5px;
+   outline: none;
+   border-radius: 0.5em;
+   border: 1px solid #556B2F;   
+}
+
+.form-wrapper textarea{
+    height: 100px;
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 0.5em;
+    border: 1px solid #556B2F;   
+ }
+
+ .form-wrapper select{
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 0.5em;
+    border: 1px solid #556B2F;   
+ }
+
+
+.form-wrapper button {
+    padding: 10px 20px;
+    margin: 12px;   
+    background-color: #556B2F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #556B2F;
+}
+
+.form-wrapper button:hover {
+    background-color: white;
+    color: #556B2F;
+    border: 2px solid #556B2F;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: #556B2F;
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+th {
+    width: 100% !important;
+}
+
+
+@media screen and (max-width: 800px){
+    nav.navbar-menu a {
+        width: 100%;       
+        padding: 10px 5px;
+    }
+
+    div.welcome-wrapper > p a{
+        width: 100%;
+    }
+}

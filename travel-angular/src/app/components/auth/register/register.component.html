@@ -1,0 +1,62 @@
+<div class="form-wrapper help">
+  <h1 class="allHeading">Register</h1>
+  <form #registerForm="ngForm" (ngSubmit)="registerFunc()">
+
+    <!-- username field -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input required minlength="4" ngModel #username="ngModel" type="text" name="username" id="username"
+        placeholder="Enter username" class="form-control">
+      <div *ngIf="username.invalid && username.touched">
+        <div *ngIf="username.errors.required" class="alert-danger">
+          Username field is required!
+        </div>
+        <div *ngIf="username.errors.minlength" class="alert-danger">
+          Username must be at least 4 characters long!
+        </div>
+      </div>
+    </div>
+
+    <!-- email field -->
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input required email ngModel #email="ngModel" type="email" name="email" id="email" placeholder="Enter email"
+        class="form-control">
+      <div *ngIf="email.invalid && email.touched">
+        <div *ngIf="email.errors.required" class="alert-danger">
+          Email field is required!
+        </div>
+        <div *ngIf="email.errors.email" class="alert-danger">
+          Please enter valid email!
+        </div>
+      </div>
+    </div>
+
+    <!-- pass and confirm pass fields -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input required minlength="6" ngModel #password="ngModel" type="password" class="form-control" id="password"
+        name="password" placeholder="Enter your password">
+      <div *ngIf="password.invalid && password.touched">
+        <div *ngIf="password.errors.required" class="alert-danger">
+          Password field is required!
+        </div>
+        <div *ngIf="password.errors.minlength" class="alert-danger">
+          Password must be at least 6 characters long!
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input required ngModel #confirmPassword="ngModel" type="password" class="form-control" id="confirmPassword"
+        name="confirmPassword" placeholder="Confirm your password">
+      <div *ngIf="confirmPassword.touched">
+        <div *ngIf="password.value !== confirmPassword.value" class="alert-danger">
+          Password and confirm password do not match!
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid" class="mybtn">Register</button>
+  </form>
+</div>

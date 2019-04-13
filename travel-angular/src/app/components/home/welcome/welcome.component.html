@@ -1,0 +1,20 @@
+<div *ngIf="isLoggedIn" class="welcome">
+  <h1>Welcome back to the Travel Diary, {{username}} !</h1>
+  <p *ngIf="isAdmin">
+    <a routerLink="/category/create">Add new category</a>
+    <a routerLink="/category/all">View all categories</a>
+  </p>
+  <p *ngIf="!isAdmin">
+    <a routerLink="/adventure/create">Add new adventure</a>
+    <a routerLink="/adventure/myposts">View your posts</a>
+  </p>
+</div>
+
+<div *ngIf="!isLoggedIn" class="welcome">
+  <h1>Welcome to our Travel Diary</h1>
+  <p>Please login or register to be able to share your exiting adventures!</p>
+  <p>
+    <a routerLink="/login">Go to Login</a>
+    <a routerLink="/register">Go to Register</a>
+  </p>
+</div>

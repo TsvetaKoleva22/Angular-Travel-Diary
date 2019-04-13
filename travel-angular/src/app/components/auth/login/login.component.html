@@ -1,0 +1,26 @@
+<div class="form-wrapper help">
+  <h1 class="allHeading">Login</h1>
+  <form #loginForm="ngForm" (ngSubmit)="loginFunc()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input required ngModel #username="ngModel" type="text" name="username" id="username" placeholder="Enter your username" class="form-control">
+      <div *ngIf="username.invalid && username.touched" class="alert-danger">
+        Username field is required!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input required minlength="6" ngModel #password="ngModel" type="password" 
+      class="form-control" id="password" name="password" placeholder="Enter your password">
+      <div *ngIf="password.invalid && password.touched" >
+          <div *ngIf="password.errors.required" class="alert-danger">
+              Password field is required!
+          </div>
+          <div *ngIf="password.errors.minlength" class="alert-danger">
+              Password must be at least 6 characters long!
+          </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid" class="mybtn">Login</button>
+  </form>
+</div>

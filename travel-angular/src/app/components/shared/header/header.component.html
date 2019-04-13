@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar-menu">
+    <a routerLink="/about" id="navimage"><img id="compass" src="assets/images/logo.jpg" alt="logo" /></a>
+    <a routerLink="/" class="active" aria-current="page">Home</a>
+    <a routerLink="/adventure/all">All Adventures</a>
+
+    <a routerLink="/category/create" *ngIf="isAdmin">Create Category</a>
+    <a routerLink="/category/all" *ngIf="isAdmin">All Categories</a>
+
+    <a routerLink="/adventure/create" *ngIf="isLoggedIn && !isAdmin">Add Adventure</a>
+    <a routerLink="/adventure/myposts" *ngIf="isLoggedIn && !isAdmin">My Posts</a>
+
+    <a (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+
+    <a routerLink="/register" *ngIf="!isLoggedIn">Register</a>
+    <a routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+    
+    <p *ngIf="username" id="hiPar">Hi, {{username}}</p>
+  </nav>
+</header>
