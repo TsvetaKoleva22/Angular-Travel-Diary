@@ -1,0 +1,12 @@
+<img class="card-img-top card-image" src="{{adv.imageUrl}}" alt="{{adv.title}}" />
+<div class="card-body">
+  <h4 class="card-title">{{adv.title}}</h4>
+  <p class="card-text">Destination: {{adv.destination}}</p>
+  <p class="card-text">Author: {{adv.author}}</p>
+  <p class="datePar">Added on: {{adv.creationDate | date: 'MMM d, y' }}</p>
+</div>
+<div class="card-footer">
+  <small class="text-muted"></small>
+  <a type="button" class="btn btn-primary float-center btn-sm" routerLink="{{'/adventure/details/' + adv._id}}">
+    Details</a>
+</div>

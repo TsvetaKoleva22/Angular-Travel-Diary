@@ -1,0 +1,13 @@
+<h2 class="allHeading">All adventures</h2>
+
+<div class="container help">
+  <div class="row">
+    <div class="card-deck space-top">
+      <div class="card col-4" *ngFor="let adv of $advToShow | async">
+
+        <app-single-adv [adv]="adv"></app-single-adv>
+
+      </div>
+    </div>
+  </div>
+</div>
