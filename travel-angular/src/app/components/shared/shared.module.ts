@@ -4,13 +4,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { SingleAdvComponent } from './single-adv/single-adv.component';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent, AboutComponent],
+  declarations: [FooterComponent, HeaderComponent, AboutComponent, SingleAdvComponent],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [FooterComponent, HeaderComponent]
+  exports: [FooterComponent, HeaderComponent, SingleAdvComponent]
 })
 export class SharedModule { }

@@ -31,7 +31,8 @@ import { AdventuresService } from './core/services/adventures.service';
     ToastrModule.forRoot(),
     SharedModule,
     AuthModule,
-    HomeModule
+    HomeModule,
+    // AdventuresModule - Lazy loading!
   ],
   providers: [
     AuthService,

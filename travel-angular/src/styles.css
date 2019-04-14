@@ -72,6 +72,7 @@ nav.navbar-menu a:hover {
     margin: 0px;
 }
 .allHeading{
+    font: 16px/1.5 'Lucida Calligraphy', sans-serif;
     text-align: center;
     margin: 15px;
     font-size: 40px;

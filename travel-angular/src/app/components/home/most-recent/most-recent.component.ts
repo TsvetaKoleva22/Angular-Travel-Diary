@@ -1,17 +1,19 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AdventuresService } from 'src/app/core/services/adventures.service';
 import { AdventureI } from 'src/app/core/models/adv.interface';
-
 
 @Component({
   selector: 'app-most-recent',
   templateUrl: './most-recent.component.html',
   styleUrls: ['./most-recent.component.css']
 })
-export class MostRecentComponent implements OnInit, DoCheck {
+export class MostRecentComponent implements OnInit, DoCheck, OnDestroy {
   isAdmin: boolean;
   advToShow: AdventureI[];
+  advSub: Subscription;
 
   constructor(
     private authService: AuthService,
@@ -19,7 +21,7 @@ export class MostRecentComponent implements OnInit, DoCheck {
   ) { }
 
   ngOnInit() {
-    this.advService.getAllAdvS()
+    this.advSub = this.advService.getAllAdvS()
       .subscribe((data) => {
         // console.log(data);
         if (data.length > 3) {
@@ -33,6 +35,10 @@ export class MostRecentComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     this.isAdmin = this.authService.isAdmin();
+  }
+
+  ngOnDestroy(){
+    this.advSub.unsubscribe();
   }
 
 }
