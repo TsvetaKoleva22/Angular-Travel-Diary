@@ -1,0 +1,25 @@
+<div class="help">
+  <h2 class="allHeading">{{currAdv.title}}</h2>
+  <div class="card col-6 contDet">
+    <img class="imgDet" src="{{currAdv.imageUrl}}" alt={currAdv.title} />
+
+    <div class="card-body">
+      <h5 class="headingDetails">Destination: {{currAdv.destination}}
+        <span>&#10084;</span> {{currLikes}}
+      </h5>
+      <p class="card-text">{{currAdv.description}}</p>
+      <p class="card-text">Author: {{currAdv.author}}</p>
+      <p class="datePar">Added on: {{currAdv.creationDate | date: 'MMM d, y' }}</p>
+    </div>
+
+    <div class="card-footer footerBtns">
+      <a *ngIf="!isAuthor" type="button" (click)="likeFunc(currAdv._id, currLikes)"
+        class="btn btn-primary float-center btn-sm" id="likeButton">&#10084; Like</a>
+      <a *ngIf="isAuthor" type="button" routerLink="{{'/adventure/edit/' + currAdv._id}}"
+        class="btn btn-primary float-center btn-sm" id="editButtDetails">Edit</a>
+      <a *ngIf="isAuthor || isAdmin" type="button" routerLink="{{'/adventure/delete/' + currAdv._id}}"
+        class="btn btn-primary float-center btn-sm" id="delButtDetails">Delete</a>
+    </div>
+    
+  </div>
+</div>

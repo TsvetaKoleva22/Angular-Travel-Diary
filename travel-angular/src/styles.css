@@ -109,10 +109,27 @@ nav.navbar-menu a:hover {
     cursor: not-allowed;
 }
 .alert-danger{
-    background: rgb(212, 127, 124);
+    border: 5px solid rgb(238, 76, 71);
     border-radius: 5px;
     padding: 5px;
     margin-top: 8px;
+}
+
+.footerBtns{
+    text-align: center;
+}
+#editButtDetails{
+    background-color:#556B2F;
+    margin-right: 20px;
+}
+#delButtDetails{
+    background-color:rgb(143, 43, 40);
+    margin-left: 20px;
+}
+
+#likeButton{
+    background-color: rgb(243, 121, 227);
+    color: indigo;
 }
 
 
@@ -136,11 +153,7 @@ nav.navbar-menu a:hover {
     width: 300px;
 }
 
-#likeButton{
-    background: rgb(243, 121, 227);
-    color: indigo;
-    margin-right: 40px;
-}
+
 
 .headingDetails{
     text-align: center

@@ -13,10 +13,7 @@ export class AdventuresService {
   private readonly deleteUrl = 'http://localhost:5000/adv/delete/'; //id
 
   private readonly likeUrl = 'http://localhost:5000/adv/like/'; //id
-
-//   private readonly getDetailsUrl = 'http://localhost:5000/furniture/details/';
-//   private readonly getMyUrl = 'http://localhost:5000/furniture/user';
-
+  private readonly getDetailsUrl = 'http://localhost:5000/adv/details/'; //id
 
   constructor(private http : HttpClient) { }
 
@@ -29,18 +26,19 @@ export class AdventuresService {
   }
 
   editAdvS(id, body){
-    return this.http.put(this.editUrl + id, body);
+    return this.http.post(this.editUrl + id, body);
   }
 
   delAdvS(id) {
     return this.http.delete(this.deleteUrl + id);
   }
 
-//   getDetailsS(id): Observable<AdventureI>{
-//     return this.http.get<AdventureI>(this.getDetailsUrl + id);
-//   }
+  getDetailsS(id): Observable<AdventureI>{
+    return this.http.get<AdventureI>(this.getDetailsUrl + id);
+  }
 
-//   getMyPostsS(): Observable<AdventureI[]>{
-//     return this.http.get<AdventureI[]>(this.getMyUrl);
-//   }
+  likeAdvS(id, body){
+    return this.http.post(this.likeUrl + id, body);
+  }
+
 }

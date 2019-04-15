@@ -1,5 +1,5 @@
 const express = require('express')
-// const authCheck = require('../config/auth-check')
+const authCheck = require('../config/auth-check')
 const Adventure = require('../models/Adv')
 
 const router = new express.Router()
@@ -15,7 +15,7 @@ function validateAdvCreateForm(payload) {
     errors.name = 'Title must be at least 3 symbols.'
   }
 
-  if (!payload || typeof payload.imageUrl !== 'string' || !(payload.imageUrl.startsWith('https://') || payload.imageUrl.startsWith('http://'))) {
+  if (!payload || typeof payload.imageUrl !== 'string') {
     isFormValid = false
     errors.image = 'Please enter valid Image URL.'
   }
@@ -30,11 +30,10 @@ function validateAdvCreateForm(payload) {
     errors.description = 'Description must be at least 10 symbols and less than 500 symbols.'
   }
 
-  if (!payload || payload.category === "") {
-    isFormValid = false
-    errors.description = 'Please choose a category.'
-  }
-
+  // if (!payload || payload.category === "") {
+  //   isFormValid = false
+  //   errors.description = 'Please choose a category.'
+  // }
 
 
   if (!isFormValid) {
@@ -49,7 +48,7 @@ function validateAdvCreateForm(payload) {
 }
 
 // router.post('/create', authCheck, (req, res) => {
-router.post('/create', (req, res) => {
+router.post('/create', authCheck, (req, res) => {
   const advObj = req.body
   const validationResult = validateAdvCreateForm(advObj)
   if (!validationResult.success) {
@@ -87,6 +86,20 @@ router.get('/all', (req, res) => {
     .find()
     .then(adventures => {
       res.status(200).json(adventures)
+    })
+})
+
+router.get('/details/:id', authCheck, (req, res) => {
+  const id = req.params.id
+  Adventure.findById(id)
+    .then((adv) => {
+      if (!adv) {
+        return res.status(404).json({
+          success: false,
+          message: 'Entry does not exists!'
+        })
+      }
+      res.status(200).json(adv)
     })
 })
 
@@ -158,7 +171,7 @@ router.post('/like/:id', (req, res) => {
         })
         .catch((err) => {
           console.log(err)
-          let message = 'Something went wrong :( Check the form for errors.'
+          let message = 'Something went wrong!'
           return res.status(200).json({
             success: false,
             message: message

@@ -1,0 +1,79 @@
+<div class="form-wrapper help">
+  <h1 class="allHeading">Add new adventure</h1>
+  <form #createAdvForm="ngForm" (ngSubmit)="createAdvFunc()">
+
+    <!-- title field -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input required minlength="3" ngModel #title="ngModel" type="text" name="title" id="title"
+        placeholder="Enter title" class="form-control">
+      <div *ngIf="title.invalid && title.touched">
+        <div *ngIf="title.errors.required" class="alert-danger">
+          Title field is required!
+        </div>
+        <div *ngIf="title.errors.minlength" class="alert-danger">
+          Title must be at least 3 characters long!
+        </div>
+      </div>
+    </div>
+
+    <!-- category field -->
+    <div class="form-group">
+      <label for="category">Choose category</label>
+      <select required ngModel #category="ngModel" id="category" name="category" class="form-control">
+        <option selected="true" disabled="true" value="" class="myOpt">Choose the suitable category...</option>
+        <option *ngFor="let cat of $categoriesArr | async" [value]="cat._id">{{cat.name}}</option>
+      </select>
+
+      <div *ngIf="category.invalid && category.touched">
+        <div *ngIf="category.errors.required" class="alert-danger">
+          Category field is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- image field -->
+    <div class="form-group">
+      <label for="imageUrl">Image Url</label>
+      <input required ngModel #imageUrl="ngModel" type="text" name="imageUrl" id="imageUrl"
+        placeholder="Enter image Url" class="form-control">
+      <div *ngIf="imageUrl.invalid && imageUrl.touched">
+        <div *ngIf="imageUrl.errors.required" class="alert-danger">
+          Image field is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- destination field -->
+    <div class="form-group">
+      <label for="destination">Destination</label>
+      <input required minlength="2" ngModel #destination="ngModel" type="text" name="destination" id="destination"
+        placeholder="Enter destination" class="form-control">
+      <div *ngIf="destination.invalid && destination.touched">
+        <div *ngIf="destination.errors.required" class="alert-danger">
+          Destination field is required!
+        </div>
+        <div *ngIf="destination.errors.minlength" class="alert-danger">
+          Destination must be at least 2 characters long!
+        </div>
+      </div>
+    </div>
+
+    <!-- description field -->
+    <div class="form-group">
+      <label for="description">Adventure description</label>
+      <input required minlength="10" maxlength="500" ngModel #description="ngModel" type="text" name="description" id="description"
+        placeholder="Enter adventure description" class="form-control">
+      <div *ngIf="description.invalid && description.touched">
+        <div *ngIf="description.errors.required" class="alert-danger">
+          Description field is required!
+        </div>
+        <div *ngIf="description.errors.minlength" class="alert-danger">
+            Description must be between 10 and 500 characters!
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="createAdvForm.invalid" class="mybtn">Create</button>
+  </form>
+</div>

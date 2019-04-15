@@ -6,16 +6,31 @@ import { SharedModule } from '../shared/shared.module';
 
 import { AdvAllComponent } from './adv-all/adv-all.component';
 import { MyAdvsComponent } from './my-advs/my-advs.component';
+import { DetailsComponent } from './details/details.component';
+import { DetailsResolver } from 'src/app/core/resolvers/details.resolver';
+import { AdvCreateComponent } from './adv-create/adv-create.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AdvAllComponent, MyAdvsComponent],
+  declarations: [AdvAllComponent, MyAdvsComponent, DetailsComponent, AdvCreateComponent],
   imports: [
-    CommonModule, 
+    CommonModule,
+    FormsModule,
     SharedModule,
     RouterModule.forChild([
-      {path: 'all', component: AdvAllComponent},
-      {path: 'myposts', component: MyAdvsComponent},
+      { path: 'all', component: AdvAllComponent },
+      { path: 'myposts', component: MyAdvsComponent },
+      {
+        path: 'details/:id',
+        component: DetailsComponent,
+        resolve: { detailsResolver: DetailsResolver }
+      },
+      { path: 'create', component: AdvCreateComponent}
     ])
+  ],
+  providers: [
+    DetailsResolver
   ]
+
 })
 export class AdventuresModule { }
