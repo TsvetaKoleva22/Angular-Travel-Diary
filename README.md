@@ -38,7 +38,7 @@ The app has the following *dynamic* pages:
 4. **My Posts** - shows only the posts of the currently logged in user in a format, similar to the all posts view.
 5. **Details** - gives detailed info for the selected post, showing the author’s description of the adventure and the number of likes. Offers different options - like the post, edit or delete it(depending on the user status).
 6. **Edit** - a form with four fields that are prefilled with the current info for the post. It allows the user to change the title, image, destination and/or description of the adventure;
-7. **Delete** - shows the image of the post and a form with two disabled prefilled fields - title and destination. Allows the user/admin to permanently delete the post.
+7. **Delete** - shows the image of the post and a form with three disabled prefilled fields - title, destination and description. Allows the user/admin to permanently delete the post.
 8. **Create Category** - for admins only. A form with one field for the name of the new category.
 9. **All Categories** - for admins only. Shows all available categories.
 10. **Search Results page** - shows the results of a search by category. Can be accessed only after a performed search. 
