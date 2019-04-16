@@ -1,0 +1,65 @@
+<div class="form-wrapper help">
+  <h1 class="allHeading">Edit adventure</h1>
+  <form #editAdvForm="ngForm" (ngSubmit)="editAdvFunc()">
+
+    <!-- title field -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input required minlength="3" [(ngModel)]="adv.title" #title="ngModel" type="text" 
+      name="title" id="title" class="form-control">
+      <div *ngIf="title.invalid && title.touched">
+        <div *ngIf="title.errors.required" class="alert-danger">
+          Title field is required!
+        </div>
+        <div *ngIf="title.errors.minlength" class="alert-danger">
+          Title must be at least 3 characters long!
+        </div>
+      </div>
+    </div>
+
+    <!-- image field -->
+    <div class="form-group">
+      <label for="imageUrl">Image Url</label>
+      <input required [(ngModel)]="adv.imageUrl" #imageUrl="ngModel" type="text" 
+      name="imageUrl" id="imageUrl" class="form-control">
+      <div *ngIf="imageUrl.invalid && imageUrl.touched">
+        <div *ngIf="imageUrl.errors.required" class="alert-danger">
+          Image field is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- destination field -->
+    <div class="form-group">
+      <label for="destination">Destination</label>
+      <input required minlength="2" [(ngModel)]="adv.destination" #destination="ngModel" 
+      type="text" name="destination" id="destination" class="form-control">
+      <div *ngIf="destination.invalid && destination.touched">
+        <div *ngIf="destination.errors.required" class="alert-danger">
+          Destination field is required!
+        </div>
+        <div *ngIf="destination.errors.minlength" class="alert-danger">
+          Destination must be at least 2 characters long!
+        </div>
+      </div>
+    </div>
+
+    <!-- description field -->
+    <div class="form-group">
+      <label for="editdescription">Adventure description</label>
+      <textarea required minlength="10" maxlength="500" [(ngModel)]="adv.description" 
+      #description="ngModel" type="text" name="description" id="editdescription" class="form-control">
+      </textarea>
+      <div *ngIf="description.invalid && description.touched">
+        <div *ngIf="description.errors.required" class="alert-danger">
+          Description field is required!
+        </div>
+        <div *ngIf="description.errors.minlength" class="alert-danger">
+            Description must be between 10 and 500 characters!
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="editAdvForm.invalid" class="mybtn">Edit</button>
+  </form>
+</div>

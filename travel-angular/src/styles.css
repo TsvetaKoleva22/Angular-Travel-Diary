@@ -79,6 +79,17 @@ nav.navbar-menu a:hover {
     color: #556B2F;
 }
 
+.delHeading{
+    color: crimson;
+}
+#imgDel{
+    margin-bottom: 15px;
+    border: 10px solid white;
+}
+#delViewBut{
+    background-color: lightcoral;
+}
+
 .imgDet{
     width: 500px;
     height: 300px;
@@ -130,6 +141,10 @@ nav.navbar-menu a:hover {
 #likeButton{
     background-color: rgb(243, 121, 227);
     color: indigo;
+}
+
+#editdescription{
+    height: 200px;
 }
 
 

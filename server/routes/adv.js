@@ -89,7 +89,7 @@ router.get('/all', (req, res) => {
     })
 })
 
-router.get('/details/:id', authCheck, (req, res) => {
+router.get('/details/:id', (req, res) => {
   const id = req.params.id
   Adventure.findById(id)
     .then((adv) => {
@@ -103,7 +103,7 @@ router.get('/details/:id', authCheck, (req, res) => {
     })
 })
 
-router.post('/edit/:id', (req, res) => {
+router.post('/edit/:id', authCheck, (req, res) => {
   const advId = req.params.id
   const advObj = req.body
   const validationResult = validateAdvCreateForm(advObj)
@@ -151,7 +151,7 @@ router.post('/edit/:id', (req, res) => {
     })
 })
 
-router.post('/like/:id', (req, res) => {
+router.post('/like/:id', authCheck, (req, res) => {
   const advId = req.params.id
   const advObj = req.body
 
@@ -188,7 +188,7 @@ router.post('/like/:id', (req, res) => {
     })
 })
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id', authCheck, (req, res) => {
   const id = req.params.id
   Adventure
     .findById(id)

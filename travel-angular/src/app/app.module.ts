@@ -33,6 +33,7 @@ import { AdventuresService } from './core/services/adventures.service';
     AuthModule,
     HomeModule,
     // AdventuresModule - Lazy loading!
+    // CategoriesModule - Lazy loading!
   ],
   providers: [
     AuthService,
