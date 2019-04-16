@@ -1,48 +1,34 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 
 import { AdvAllComponent } from './adv-all/adv-all.component';
-import { MyAdvsComponent } from './my-advs/my-advs.component';
 import { DetailsComponent } from './details/details.component';
-import { DetailsResolver } from 'src/app/core/resolvers/details.resolver';
+import { MyAdvsComponent } from './my-advs/my-advs.component';
 import { AdvCreateComponent } from './adv-create/adv-create.component';
-import { FormsModule } from '@angular/forms';
 import { AdvDeleteComponent } from './adv-delete/adv-delete.component';
 import { AdvEditComponent } from './adv-edit/adv-edit.component';
+import { FoundAdvComponent } from './found-adv/found-adv.component';
+
+import { DetailsResolver } from 'src/app/core/resolvers/details.resolver';
+import { SinglecatResolver } from 'src/app/core/resolvers/singlecat.resolver';
+
+import { AdvsRoutingModule } from './advs-routing.module';
 
 @NgModule({
-  declarations: [AdvAllComponent, MyAdvsComponent, DetailsComponent, 
-    AdvCreateComponent, AdvDeleteComponent, AdvEditComponent],
+  declarations: [AdvAllComponent, MyAdvsComponent, DetailsComponent,
+    AdvCreateComponent, AdvDeleteComponent, AdvEditComponent, FoundAdvComponent],
   imports: [
     CommonModule,
     FormsModule,
     SharedModule,
-    RouterModule.forChild([
-      { path: 'all', component: AdvAllComponent },
-      { path: 'myposts', component: MyAdvsComponent },
-      {
-        path: 'details/:id',
-        component: DetailsComponent,
-        resolve: { detailsResolver: DetailsResolver }
-      },
-      { path: 'create', component: AdvCreateComponent},
-      {
-        path: 'delete/:id',
-        component: AdvDeleteComponent,
-        resolve: { detailsResolver: DetailsResolver }
-      },
-      {
-        path: 'edit/:id',
-        component: AdvEditComponent,
-        resolve: { detailsResolver: DetailsResolver }
-      },
-    ])
+    AdvsRoutingModule
   ],
   providers: [
-    DetailsResolver
+    DetailsResolver,
+    SinglecatResolver
   ]
 
 })

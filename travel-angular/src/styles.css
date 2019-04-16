@@ -146,6 +146,24 @@ nav.navbar-menu a:hover {
 #editdescription{
     height: 200px;
 }
+#categorysearch{
+    margin: 0 auto;
+    height: 50px;
+    width: 350px;
+    padding: 12px;
+}
+#allCont{
+    margin: 0 auto;
+    max-width: 1500px;
+}
+#allContForm{
+    margin: 0 auto;
+    max-width: 1500px;
+}
+#allForm{
+    margin: 0 auto;
+    width: 70%;
+}
 
 
 .userForm input{

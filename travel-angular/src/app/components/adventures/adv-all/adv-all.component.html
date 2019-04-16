@@ -1,6 +1,18 @@
 <h2 class="allHeading">All adventures</h2>
 
-<div class="container help">
+<div class="container help" id="allCont">
+
+  <div class="form-wrapper" id="allContForm">
+    <form #searchForm="ngForm" (ngSubmit)="searchFunc()" id="allForm">
+      <select ngModel #category="ngModel" id="categorysearch" name="category" class="form-control">
+        <option selected="true" disabled="true" value="" class="myOptSearch">Search by category...</option>
+        <option *ngFor="let cat of $categoriesArr | async" [value]="cat._id">{{cat.name}}</option>
+      </select>
+
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
   <div class="row">
     <div class="card-deck space-top">
       <div class="card col-4" *ngFor="let adv of $advToShow | async">

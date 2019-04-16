@@ -13,7 +13,7 @@
     </div>
 
     <div class="card-footer footerBtns">
-      <a *ngIf="!isAuthor" type="button" (click)="likeFunc(currAdv._id, currLikes)"
+      <a *ngIf="isLoggedIn && !isAuthor" type="button" (click)="likeFunc(currAdv._id, currLikes)"
         class="btn btn-primary float-center btn-sm" id="likeButton">&#10084; Like</a>
       <a *ngIf="isAuthor" type="button" routerLink="{{'/adventure/edit/' + currAdv._id}}"
         class="btn btn-primary float-center btn-sm" id="editButtDetails">Edit</a>

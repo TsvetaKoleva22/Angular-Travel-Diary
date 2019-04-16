@@ -15,6 +15,7 @@ export class DetailsComponent implements OnInit {
   currLikes;
   isAuthor: boolean;
   isAdmin: boolean;
+  isLoggedIn: boolean;
 
   constructor(
     private advService: AdventuresService,
@@ -27,6 +28,7 @@ export class DetailsComponent implements OnInit {
     this.currLikes = this.currAdv.likes; 
     
     this.isAdmin = this.authService.isAdmin();
+    this.isLoggedIn = this.authService.isAuthenticated();
     this.isAuthor = this.currAdv.author === localStorage.getItem('username');
   }
 

@@ -67,4 +67,19 @@ router.get('/all', (req, res) => {
     })
 })
 
+router.get('/single/:catid', (req, res) => {
+  const catid = req.params.catid;
+  
+  Category.findById(catid)
+  .then((cat) => {
+    if (!cat) {
+      return res.status(404).json({
+        success: false,
+        message: 'Entry does not exists!'
+      })
+    }
+    res.status(200).json(cat)
+  })
+})
+
 module.exports = router

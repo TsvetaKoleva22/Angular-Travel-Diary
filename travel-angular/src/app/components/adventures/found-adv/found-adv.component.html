@@ -1,0 +1,18 @@
+<h2 class="allHeading">Search results for category "{{currCat.name}}": </h2>
+
+<div *ngIf="foundAdvs" class="container help">
+  <h4 *ngIf="!hasAdv">Sorry, no adventures in this category yet....</h4>
+  <h4 *ngIf="!hasAdv">Be the first to add one!</h4>
+
+  <div *ngIf="hasAdv" class="row">
+    <div class="card-deck space-top">
+
+      <div class="card col-4" *ngFor="let adv of foundAdvs">
+
+        <app-single-adv [adv]="adv"></app-single-adv>
+
+      </div>
+
+    </div>
+  </div>
+</div>
