@@ -22,7 +22,7 @@ export class ResInterceptor implements HttpInterceptor {
         if(event instanceof HttpResponse && (request.url.endsWith('login') || request.url.endsWith('signup')
           || request.url.includes('create') ||  request.url.includes('delete') || request.url.includes('edit') 
           || request.url.includes('like'))){
-          console.log(event);
+          // console.log(event);
           if (event.body.success && request.url.endsWith('login')){
             this.authService.saveUserInfo(event.body);
             this.toastr.success(event.body.message, 'Success');
