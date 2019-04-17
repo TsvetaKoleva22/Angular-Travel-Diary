@@ -1,9 +1,9 @@
 # Angular-Travel-Diary
 ## Project Assignment for Angular Fundamentals SoftUni 2019
 
-The project is a single-page web application created using Angular framework for the user interface and a local server built using Node.js and MongoDB for the back-end. It supports error handling and data validation and uses Toastr to show the corresponding notifications. The styling is enhanced with the help of Bootstrap.
+The project is a single-page web application created using Angular framework for the user interface and a local server built using Node.js and MongoDB for the back-end. It is a kind of blog system where keen travelers can share their exciting adventures like travels to exotic destinations or amazing discoveries closer to home.
 
-The app is a kind of blog system where keen travelers can share their exciting adventures like travels to exotic destinations or amazing discoveries closer to home.
+The app uses Observables, Interceptors, Routing, Route Guards, Resolvers, Interfaces, Lazy loading of modules, Pipes and other Angular features. It supports error handling and data validation and uses Toastr to show the corresponding notifications. The styling is enhanced with the help of Bootstrap.
 
 There are *three* main parts:
 1. **Public part**, which is accessible to everyone, without authentication. Every visitor can:
