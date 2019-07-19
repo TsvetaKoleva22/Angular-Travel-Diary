@@ -1,11 +1,11 @@
 {
-  "name": "pizza-lab-system",
+  "name": "angular-travel-diary",
   "version": "0.0.1",
-  "description": "Pizza Lab",
+  "description": "Angular Travel Diary Project",
   "main": "index.js",
   "keywords": [
-    "pizza",
-    "system"
+    "travel",
+    "diary"
   ],
   "author": "PA",
   "license": "MIT",

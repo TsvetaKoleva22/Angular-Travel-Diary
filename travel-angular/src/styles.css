@@ -66,12 +66,12 @@ nav.navbar-menu a:hover {
     height: 50px;
 }
 
-.datePar{
+.date-line{
     color: rgb(206, 56, 119);
     font-size: 12px;
     margin: 0px;
 }
-.allHeading{
+.all-heading{
     font: 16px/1.5 'Lucida Calligraphy', sans-serif;
     text-align: center;
     margin: 15px;
@@ -79,33 +79,33 @@ nav.navbar-menu a:hover {
     color: #556B2F;
 }
 
-.delHeading{
+.delete-heading{
     color: crimson;
 }
-#imgDel{
+#image-delete{
     margin-bottom: 15px;
     border: 10px solid white;
 }
-#delViewBut{
+#deleteview-button{
     background-color: lightcoral;
 }
 
-.imgDet{
+.image-details{
     width: 500px;
     height: 300px;
     margin-top: 10px;
 }
 
-.contDet{
+.content-details{
     margin: 0 auto;
 }
 
-.aboutPar{
+.about-par{
     margin: 20px;
     font: 22px/1.5 'Lucida Calligraphy', sans-serif;
     font-size: 22px;
 }
-#hiPar{
+#hi-par{
     text-align: right;
     margin-right: 20px;
     color: white;
@@ -139,25 +139,25 @@ nav.navbar-menu a:hover {
     margin-left: 20px;
 }
 
-#likeButton{
+#like-button{
     background-color: rgb(243, 121, 227);
     color: indigo;
 }
 
-#editdescription{
+#edit-description{
     height: 200px;
 }
-#categorysearch{
+#category-search{
     margin: 0 auto;
     height: 50px;
     width: 350px;
     padding: 12px;
 }
-#allCont{
+#all-content{
     margin: 0 auto;
     max-width: 1500px;
 }
-#allContForm{
+#allcontent-form{
     margin: 0 auto;
     max-width: 1500px;
 }
@@ -189,10 +189,10 @@ nav.navbar-menu a:hover {
 
 
 
-.headingDetails{
+.heading-details{
     text-align: center
 }
-.headingDetails span{
+.heading-details span{
     color: deeppink;
     margin-left: 30px;
 }

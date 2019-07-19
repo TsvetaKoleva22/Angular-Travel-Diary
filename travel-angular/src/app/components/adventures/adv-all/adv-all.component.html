@@ -1,10 +1,10 @@
-<h2 class="allHeading">All adventures</h2>
+<h2 class="all-heading">All adventures</h2>
 
-<div class="container help" id="allCont">
+<div class="container help" id="all-content">
 
-  <div class="form-wrapper" id="allContForm">
+  <div class="form-wrapper" id="allcontent-form">
     <form #searchForm="ngForm" (ngSubmit)="searchFunc()" id="allForm">
-      <select ngModel #category="ngModel" id="categorysearch" name="category" class="form-control">
+      <select ngModel #category="ngModel" id="category-search" name="category" class="form-control">
         <option selected="true" disabled="true" value="" class="myOptSearch">Search by category...</option>
         <option *ngFor="let cat of $categoriesArr | async" [value]="cat._id">{{cat.name}}</option>
       </select>

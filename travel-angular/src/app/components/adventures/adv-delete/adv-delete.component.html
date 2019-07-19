@@ -1,6 +1,6 @@
 <div class="form-wrapper help">
-  <h1 class="allHeading delHeading">Delete adventure</h1>
-  <img src="{{adv.imageUrl}}" alt="{{adv.title}}" id="imgDel"/>
+  <h1 class="all-heading delete-heading">Delete adventure</h1>
+  <img src="{{adv.imageUrl}}" alt="{{adv.title}}" id="image-delete"/>
 
   <form #deleteAdvForm="ngForm" (ngSubmit)="deleteAdvFunc(adv._id)">
 
@@ -22,6 +22,6 @@
         placeholder="{{adv.description | slice:0:20 }} ..." class="form-control">
     </div>
 
-    <button type="submit" class="mybtn" id="delViewBut">Delete</button>
+    <button type="submit" class="mybtn" id="deleteview-button">Delete</button>
   </form>
 </div>

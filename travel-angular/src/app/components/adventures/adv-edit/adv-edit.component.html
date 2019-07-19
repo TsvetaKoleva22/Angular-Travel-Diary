@@ -1,5 +1,5 @@
 <div class="form-wrapper help">
-  <h1 class="allHeading">Edit adventure</h1>
+  <h1 class="all-heading">Edit adventure</h1>
   <form #editAdvForm="ngForm" (ngSubmit)="editAdvFunc()">
 
     <!-- title field -->
@@ -46,9 +46,9 @@
 
     <!-- description field -->
     <div class="form-group">
-      <label for="editdescription">Adventure description</label>
+      <label for="edit-description">Adventure description</label>
       <textarea required minlength="10" maxlength="500" [(ngModel)]="adv.description" 
-      #description="ngModel" type="text" name="description" id="editdescription" class="form-control">
+      #description="ngModel" type="text" name="description" id="edit-description" class="form-control">
       </textarea>
       <div *ngIf="description.invalid && description.touched">
         <div *ngIf="description.errors.required" class="alert-danger">

@@ -66,33 +66,33 @@ nav.navbar-menu a:hover {
     height: 50px;
 }
 
-.datePar{
+.date-line{
     color: rgb(206, 56, 119);
     font-size: 12px;
     margin: 0px;
 }
-.allHeading{
+.all-heading{
     text-align: center;
     margin: 15px;
     font-size: 40px;
     color: #556B2F;
 }
 
-.imgDet{
+.image-details{
     width: 500px;
     height: 300px;
     margin-top: 10px;
 }
 
-.contDet{
+.content-details{
     margin: 0 auto;
 }
 
-.aboutPar{
+.about-par{
     margin: 20px;
     font-size: 16px;
 }
-#hiPar{
+#hi-par{
     text-align: right;
     margin-right: 20px;
     color: white;
@@ -135,16 +135,16 @@ nav.navbar-menu a:hover {
     width: 300px;
 }
 
-#likeButton{
+#like-button{
     background: rgb(243, 121, 227);
     color: indigo;
     margin-right: 40px;
 }
 
-.headingDetails{
+.heading-details{
     text-align: center
 }
-.headingDetails span{
+.heading-details span{
     color: deeppink;
     margin-left: 30px;
 }
