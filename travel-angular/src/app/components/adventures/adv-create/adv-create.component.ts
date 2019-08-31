@@ -14,7 +14,7 @@ import { CategoryI } from 'src/app/core/models/cat.interface';
 })
 export class AdvCreateComponent implements OnInit {
   @ViewChild('createAdvForm') createAdvForm: NgForm;
-  $categoriesArr: Observable<CategoryI[]>;
+  categoriesArr$: Observable<CategoryI[]>;
 
   constructor(
     private advService: AdventuresService,
@@ -23,7 +23,7 @@ export class AdvCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.$categoriesArr = this.catService.getAllCatS();
+    this.categoriesArr$ = this.catService.getAllCatS();
   }
 
   createAdvFunc() {

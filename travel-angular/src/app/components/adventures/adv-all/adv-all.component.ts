@@ -15,8 +15,8 @@ import { CategoriesService } from 'src/app/core/services/categories.service';
 })
 export class AdvAllComponent implements OnInit {
   @ViewChild('searchForm') searchForm: NgForm;
-  $categoriesArr: Observable<CategoryI[]>;
-  $advToShow: Observable<AdventureI[]>;
+  categoriesArr$: Observable<CategoryI[]>;
+  advToShow$: Observable<AdventureI[]>;
 
   constructor(
     private advService: AdventuresService,
@@ -25,8 +25,8 @@ export class AdvAllComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.$categoriesArr = this.catService.getAllCatS();
-    this.$advToShow = this.advService.getAllAdvS(); 
+    this.categoriesArr$ = this.catService.getAllCatS();
+    this.advToShow$ = this.advService.getAllAdvS(); 
   }
 
   searchFunc(){

@@ -11,14 +11,14 @@ import { CategoriesService } from 'src/app/core/services/categories.service';
   styleUrls: ['./cat-all.component.css']
 })
 export class CatAllComponent implements OnInit {
-  $categoriesArr: Observable<CategoryI[]>;
+  categoriesArr$: Observable<CategoryI[]>;
 
   constructor(
     private catService: CategoriesService
   ) { }
 
   ngOnInit() {
-    this.$categoriesArr = this.catService.getAllCatS(); 
+    this.categoriesArr$ = this.catService.getAllCatS(); 
   }
 
 }

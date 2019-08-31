@@ -22,7 +22,7 @@
       <label for="category">Choose category</label>
       <select required ngModel #category="ngModel" id="category" name="category" class="form-control">
         <option selected="true" disabled="true" value="" class="myOpt">Choose the suitable category...</option>
-        <option *ngFor="let cat of $categoriesArr | async" [value]="cat._id">{{cat.name}}</option>
+        <option *ngFor="let cat of categoriesArr$ | async" [value]="cat._id">{{cat.name}}</option>
       </select>
 
       <div *ngIf="category.invalid && category.touched">

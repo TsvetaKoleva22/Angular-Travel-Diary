@@ -6,7 +6,7 @@
     <form #searchForm="ngForm" (ngSubmit)="searchFunc()" id="allForm">
       <select ngModel #category="ngModel" id="category-search" name="category" class="form-control">
         <option selected="true" disabled="true" value="" class="myOptSearch">Search by category...</option>
-        <option *ngFor="let cat of $categoriesArr | async" [value]="cat._id">{{cat.name}}</option>
+        <option *ngFor="let cat of categoriesArr$ | async" [value]="cat._id">{{cat.name}}</option>
       </select>
 
       <button type="submit">Search</button>
@@ -15,7 +15,7 @@
 
   <div class="row">
     <div class="card-deck space-top">
-      <div class="card col-4" *ngFor="let adv of $advToShow | async">
+      <div class="card col-4" *ngFor="let adv of advToShow$ | async">
 
         <app-single-adv [adv]="adv"></app-single-adv>
 
